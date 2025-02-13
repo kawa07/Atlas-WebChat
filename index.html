@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="chat-background">
+        <div class="chat-app">
+            <!-- Sidebar para contatos e grupos -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <img src="src/images.jfif" alt="Foto de Perfil" class="profile-pic" id="profile-pic">
+                    <div class="user-info">
+                        <h2 id="user-name">Nome do Usuário</h2>
+                        <button id="logout-button" class="btn">
+                            <img src="src/sair.png" href="login.html" alt="Sair" style="width: 25px; height: 25px;">
+                        </button>                    
+                    </div>
+                    <input type="file" id="profile-pic-input" style="display: none;">
+                </div>
+                <div class="create-room-container" style="display: flex; align-items: center;">
+                    <button id="create-room-button" class="btn" style="margin-right: 5px;">
+                        <img src="src/mais.png" alt="Criar Sala" style="width: 25px; height: 25px;">
+                    </button>
+                    <span>Criar nova sala</span>
+                </div>
+                
+                <div id="create-room-popup" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <h2>Criar Nova Sala</h2>
+                        <input type="text" id="room-name-input" class="form-control" placeholder="Nome da Sala">
+                        <button id="create-room-submit" class="btn btn-success mt-2">Criar Sala</button>
+                        <button id="close-popup" class="btn btn-secondary mt-2">Cancelar</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="padding-left: 12px;">Suas Salas</h3>
+                    <div class="contacts-container">
+                    
+                        <!-- Contatos e salas são exibidos aqui -->
+                    </div>
+                </div>
+                
+                <div class="rooms-list-container">
+                    <h3>Explorar Novas Salas</h3>
+                    <div class="search-container">
+                        <input type="text" id="search-input" class="form-control" placeholder="Pesquisar sala...">
+                    </div>
+                    <div class="rooms-list" id="rooms-list">
+                        <!-- Lista de novas salas exploráveis -->
+                    </div>
+                </div>
+            </div>
+            <div id="notification" class="notification" style="display: none;">
+                <p id="notification-message"></p>
+            </div>
+            <!-- Área principal de chat -->
+             
+            <div class="chat-container">
+                <div id="chat-header" class="chat-header" style="display: none;">
+                    <h3 id="chat-room-name"></h3>
+                </div>
+                <div class="chat-window">
+                    <div id="welcome-message" class="welcome-message">
+                        <h1>Bem-vindo</h1>
+                        <p>Selecione uma sala para começar a conversar.</p>
+                    </div>
+                </div>
+                <div class="chat-input mt-3 d-flex" id="chat-input" style="display: none;">
+                    <input type="text" id="message-input" class="form-control" placeholder="Digite sua mensagem...">
+                    <button id="send-button" class="btn btn-primary ms-2">
+                        <img src="src/enviar.png" alt="Enviar" style="width: 35px; height: 35px;">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="build/main.js"></script>
+</body>
+</html>
